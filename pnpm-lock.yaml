@@ -11,6 +11,9 @@ importers:
       '@astrojs/react':
         specifier: ^6.0.0
         version: 6.0.0(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(esbuild@0.28.1)(jiti@2.7.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      '@fontsource-variable/science-gothic':
+        specifier: ^5.2.1
+        version: 5.2.1
       '@tailwindcss/vite':
         specifier: ^4.3.1
         version: 4.3.1(vite@8.1.0(esbuild@0.28.1)(jiti@2.7.0))
@@ -425,6 +428,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/science-gothic@5.2.1':
+    resolution: {integrity: sha512-P8/2tZRkDPvhuqGRhw3Jjbanq9n4UmfyxiDnZRmLnmKLn5lRjeYAnWop4V5lTmdhr4TiG+baHhl8dBaf6UgvVQ==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -2084,6 +2090,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.28.1':
     optional: true
+
+  '@fontsource-variable/science-gothic@5.2.1': {}
 
   '@img/colour@1.1.0':
     optional: true
