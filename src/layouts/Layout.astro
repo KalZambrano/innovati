@@ -1,31 +1,67 @@
 ---
-import '@fontsource-variable/science-gothic/wght.css';
-import '@/styles/global.css';
+import "@fontsource-variable/science-gothic/wght.css";
+import "@/styles/global.css";
+
+const title = "Innovati - Soluciones Informáticas";
+const description =
+  "INNOVATI es una empresa de soluciones informáticas que ofrece venta de hardware, licencias, chatbots, soporte tecnológico, infraestructura y seguridad digital. Nos enfocamos en brindar servicios confiables, profesionales y orientados a generar tranquilidad y confianza en cada cliente.";
+const ogImage = "/logos/og-image.png";
+const ogImageAlt = "Innovati - Soluciones Informáticas brand logo";
+const finalOgUrl = "https://innovati.vercel.app";
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<main>
-			<slot />
-		</main>
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <meta property="og:url" content={finalOgUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:locale:alternate" content="es_MX" />
+    <meta property="og:locale:alternate" content="es_AR" />
+    <meta property="og:locale:alternate" content="es_CO" />
+    <meta property="og:site_name" content="Innovati" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		font-family: 'Science Gothic Variable', sans-serif;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Science Gothic Variable", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 </style>

@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @import 'tailwind-animations';
+
+:root {
+    --primary: #00ffa9;
+    --primary-hover: #03ddb4;
+    --muted: #d5d9dd
+}
