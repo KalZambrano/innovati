@@ -1,0 +1,156 @@
+---
+import ArrowRight from "@/assets/icons/arrowright.svg";
+---
+
+<section
+  id="inicio"
+  class="relative min-h-screen flex items-center overflow-hidden pt-20"
+>
+  <!-- Background orbs -->
+  <div class="orb w-150 h-150 bg-(--primary) -top-50 -left-50"></div>
+  <div class="orb w-100 h-100 bg-[#0066ff] -bottom-25 -right-25"></div>
+
+  <!-- Grid pattern overlay -->
+  <div
+    class="absolute inset-0 opacity-[0.03]"
+    style="background-image: linear-gradient(var(--primary) 1px, transparent 1px), linear-gradient(90deg, var(--primary) 1px, transparent 1px); background-size: 60px 60px;"
+  >
+  </div>
+
+  <div class="container-xl relative z-10 py-24 lg:py-32">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Left content -->
+      <div>
+        <span class="section-eyebrow animate-fade-in-right animate-delay-200">
+          <span class="w-6 h-px bg-(--primary)"></span>
+          Outsourcing & Gestión Tecnológica
+        </span>
+
+        <h1
+          class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-white leading-[1.05] mb-6 animate-fade-in-right animate-delay-400"
+        >
+          Tecnología que
+          <span
+            class="block text-transparent bg-clip-text bg-linear-to-r from-(--primary) to-(--primary-light)"
+          >
+            impulsa tu
+          </span>
+          negocio
+        </h1>
+
+        <p
+          class="text-lg text-(--muted) mb-8 max-w-lg leading-relaxed animate-fade-in-right animate-delay-600"
+        >
+          Gestionamos tu tecnología para que te concentres en hacer crecer tu
+          empresa. Soporte TI · Infraestructura · Automatización · Seguridad.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 mb-12">
+          <a
+            href="#contacto"
+            class="btn-primary text-base px-8 py-4 animate-fade-in-right animate-delay-800"
+          >
+            Hablemos de tu empresa
+            <ArrowRight class="size-5" />
+          </a>
+          <a
+            href="#servicios"
+            class="btn-outline text-base px-8 py-4 animate-fade-in-left animate-delay-800"
+          >
+            Ver servicios
+          </a>
+        </div>
+
+        <!-- Stats row -->
+        <!-- <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          {
+            [
+              { value: "100+", label: "Clientes" },
+              { value: "99%", label: "Uptime" },
+              { value: "8+", label: "Años" },
+              { value: "24/7", label: "Soporte" },
+            ].map((stat) => (
+              <div class="text-center sm:text-left">
+                <div class="text-2xl font-bold text-(--primary)">
+                  {stat.value}
+                </div>
+                <div class="text-xs text-(--text-body) mt-0.5">
+                  {stat.label}
+                </div>
+              </div>
+            ))
+          }
+        </div> -->
+      </div>
+
+      <!-- Right — product images mosaic -->
+      <div class="relative hidden lg:block">
+        <div class="grid grid-cols-2 gap-4 h-145">
+          <!-- Col 1: two stacked images -->
+          <div class="flex flex-col gap-4">
+            <div
+              class="flex-1 rounded-2xl overflow-hidden card-glass animate-fade-in-down animate-delay-300"
+            >
+              <img
+                src="/banners/chat-bot.png"
+                alt="Infraestructura TI"
+                fetchpriority="high"
+                class="w-full h-full object-cover opacity-90"
+              />
+            </div>
+            <div
+              class="flex-1 rounded-2xl overflow-hidden card-glass animate-fade-in-right animate-delay-300"
+            >
+              <img
+                src="/banners/soporte-tecnico.png"
+                alt="Seguridad Informática"
+                fetchpriority="high"
+                class="w-full h-full object-cover opacity-90"
+              />
+            </div>
+          </div>
+
+          <!-- Col 2: two stacked images, offset -->
+          <div class="flex flex-col gap-4 mt-8">
+            <div
+              class="flex-1 rounded-2xl overflow-hidden card-glass animate-fade-in-left animate-delay-300"
+            >
+              <img
+                src="/banners/hardwares.png"
+                alt="Automatización"
+                fetchpriority="high"
+                class="w-full h-full object-cover opacity-90"
+              />
+            </div>
+            <div
+              class="flex-1 rounded-2xl overflow-hidden card-glass animate-fade-in-up animate-delay-300"
+            >
+              <img
+                src="/banners/licencias.png"
+                alt="Cloud y Hosting"
+                fetchpriority="high"
+                class="w-full h-full object-cover opacity-90"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating badge -->
+        <div
+          class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-(--bg-card) border border-(--border) rounded-2xl px-6 py-3 flex items-center gap-3 shadow-xl animate-fade-in-up animate-delay-600"
+        >
+          <div class="w-4 h-2 rounded-full bg-(--primary) animate-pulse"></div>
+          <span class="text-sm text-white font-medium"
+            >Un solo proveedor. Una sola responsabilidad.</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom fade -->
+  <div
+    class="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-(--bg-dark) to-transparent"
+  >
+  </div>
+</section>

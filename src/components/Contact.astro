@@ -1,0 +1,244 @@
+---
+import SendIcon from "@/assets/icons/send.svg";
+import WhatsappIcon from "@/assets/social/whatsapp.svg";
+import MailIcon from "@/assets/social/mail.svg";
+import MapPin from "@/assets/icons/map-pin.svg";
+import Check from "@/assets/icons/check-rounded.svg";
+import { SITE } from "../data/site";
+---
+
+<section
+  id="contacto"
+  class="py-24 lg:py-32 bg-(--bg-dark) relative overflow-hidden"
+>
+  <div
+    class="orb w-175 h-175 bg-(--primary) top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+  >
+  </div>
+
+  <div class="container-xl relative z-10">
+    <!-- Big CTA card -->
+    <div
+      class="rounded-3xl border border-(--border) bg-linear-to-br from-(--bg-card) to-(--bg-dark) p-6 sm:p-10 md:p-12 lg:p-16 relative overflow-hidden"
+    >
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <!-- Left text -->
+        <div>
+          <span class="section-eyebrow">
+            <span class="w-6 h-px bg-(--primary)"></span>
+            ¿Listo para dar el siguiente paso?
+          </span>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4"
+          >
+            Tecnología<br />
+            <span class="text-(--primary)">bajo control.</span>
+          </h2>
+          <p class="text-(--muted) text-base leading-relaxed mb-8 max-w-lg">
+            Conversemos sobre las necesidades de tu empresa y descubre cómo
+            podemos ayudarte a optimizar tu entorno tecnológico.
+          </p>
+
+          <!-- Contact options -->
+          <div class="space-y-4">
+            <a
+              href={`https://wa.me/51954644519`}
+              target="_blank"
+              rel="noopener"
+              class="flex items-center gap-4 group w-fit"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-[rgba(3,221,180,0.1)] border border-(--border) flex items-center justify-center group-hover:bg-[rgba(3,221,180,0.2)] group-hover:border-(--primary) transition-all"
+              >
+                <WhatsappIcon class="size-5 text-(--primary)" />
+              </div>
+              <div>
+                <p class="text-xs text-(--text-body)">WhatsApp directo</p>
+                <p
+                  class="text-white font-semibold group-hover:text-(--primary) transition-colors"
+                >
+                  {SITE.phone}
+                </p>
+              </div>
+            </a>
+
+            <a
+              href={`mailto:${SITE.email}`}
+              class="flex items-center gap-4 group w-fit"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-[rgba(3,221,180,0.1)] border border-(--border) flex items-center justify-center group-hover:bg-[rgba(3,221,180,0.2)] group-hover:border-(--primary) transition-all"
+              >
+                <MailIcon class="size-5 text-(--primary)" />
+              </div>
+              <div>
+                <p class="text-xs text-(--text-body)">Correo electrónico</p>
+                <p
+                  class="text-white font-semibold group-hover:text-(--primary) transition-colors"
+                >
+                  {SITE.email}
+                </p>
+              </div>
+            </a>
+
+            <div class="flex items-center gap-4 w-fit">
+              <div
+                class="w-12 h-12 rounded-xl bg-[rgba(3,221,180,0.1)] border border-(--border) flex items-center justify-center"
+              >
+                <MapPin class="size-5 text-(--primary)" />
+              </div>
+              <div>
+                <p class="text-xs text-(--text-body)">Ubicación</p>
+                <p class="text-white font-semibold">{SITE.location}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right form -->
+        <div class="card-glass rounded-2xl p-5 sm:p-6 md:p-8">
+          <h3 class="text-white font-bold text-base sm:text-lg mb-4 sm:mb-6">
+            Cuéntanos sobre tu empresa
+          </h3>
+
+          <form id="contact-form" class="space-y-3 sm:space-y-4" novalidate>
+            <div>
+              <label
+                for="name"
+                class="block text-xs font-semibold text-(--muted) mb-1 sm:mb-1.5"
+                >Nombre completo</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Juan Pérez"
+                class="w-full bg-(--bg-dark) border border-(--border) rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-(--text-body) focus:outline-none focus:border-(--primary) focus:ring-1 focus:ring-(--primary) transition-colors"
+              />
+            </div>
+
+            <div>
+              <label
+                for="company"
+                class="block text-xs font-semibold text-(--muted) mb-1 sm:mb-1.5"
+                >Empresa</label
+              >
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Mi Empresa S.A.C."
+                class="w-full bg-(--bg-dark) border border-(--border) rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-(--text-body) focus:outline-none focus:border-(--primary) focus:ring-1 focus:ring-(--primary) transition-colors"
+              />
+            </div>
+
+            <div>
+              <label
+                for="email"
+                class="block text-xs font-semibold text-(--muted) mb-1 sm:mb-1.5"
+                >Correo electrónico</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="juan@empresa.com"
+                class="w-full bg-(--bg-dark) border border-(--border) rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-(--text-body) focus:outline-none focus:border-(--primary) focus:ring-1 focus:ring-(--primary) transition-colors"
+              />
+            </div>
+
+            <div>
+              <label
+                for="service"
+                class="block text-xs font-semibold text-(--muted) mb-1 sm:mb-1.5"
+                >Servicio de interés</label
+              >
+              <select
+                id="service"
+                name="service"
+                class="w-full bg-(--bg-dark) border border-(--border) rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white focus:outline-none focus:border-(--primary) focus:ring-1 focus:ring-(--primary) transition-colors"
+              >
+                <option value="">Selecciona un servicio</option>
+                <option>Outsourcing TI</option>
+                <option>Infraestructura y Redes</option>
+                <option>Seguridad Informática</option>
+                <option>Automatización e IA</option>
+                <option>Cloud y Hosting</option>
+                <option>Equipos y Software</option>
+                <option>Renting Tecnológico</option>
+                <option>Chatbots</option>
+                <option>Varios / No sé aún</option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                for="message"
+                class="block text-xs font-semibold text-(--muted) mb-1 sm:mb-1.5"
+                >Mensaje (opcional)</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="3"
+                placeholder="Cuéntanos brevemente qué necesitas..."
+                class="w-full bg-(--bg-dark) border border-(--border) rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-(--text-body) focus:outline-none focus:border-(--primary) focus:ring-1 focus:ring-(--primary) transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn-primary w-full justify-center py-3 sm:py-3.5 text-sm"
+            >
+              Enviar consulta
+              <SendIcon class="size-4 sm:size-5" />
+            </button>
+          </form>
+
+          <!-- Success message (hidden by default) -->
+          <div id="form-success" class="hidden text-center py-6 sm:py-8">
+            <div
+              class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[rgba(3,221,180,0.1)] border border-(--primary) flex items-center justify-center mx-auto mb-3 sm:mb-4"
+            >
+              <Check class="size-6 sm:size-8 text-(--primary)" />
+            </div>
+            <h4 class="text-white font-bold text-base sm:text-lg mb-2">
+              ¡Mensaje enviado!
+            </h4>
+            <p class="text-(--muted) text-xs sm:text-sm">
+              Nos pondremos en contacto contigo pronto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const successMsg = document.getElementById("form-success") as HTMLElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // Redirect to WhatsApp with pre-filled message
+    const name = (document.getElementById("name") as HTMLInputElement).value;
+    const service = (document.getElementById("service") as HTMLSelectElement)
+      .value;
+    const message = (document.getElementById("message") as HTMLTextAreaElement)
+      .value;
+
+    const whatsappText = encodeURIComponent(
+      `Hola InnovaTI, soy ${name}. Me interesa el servicio: ${service || "consulta general"}. ${message ? `Mensaje: ${message}` : ""}`,
+    );
+
+    form.style.display = "none";
+    successMsg.classList.remove("hidden");
+
+    setTimeout(() => {
+      window.open(`https://wa.me/51954644519?text=${whatsappText}`, "_blank");
+    }, 800);
+  });
+</script>
