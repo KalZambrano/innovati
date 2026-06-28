@@ -2,12 +2,15 @@
 import "@fontsource-variable/science-gothic/wght.css";
 import "@/styles/global.css";
 
-const title = "Innovati - Soluciones Informáticas";
+import Navbar from "@/components/Navbar.astro";
+import Footer from "@/components/Footer.astro";
+
+const title = "InnovaTI - Soluciones Informáticas";
 const description =
   "INNOVATI es una empresa de soluciones informáticas que ofrece venta de hardware, licencias, chatbots, soporte tecnológico, infraestructura y seguridad digital. Nos enfocamos en brindar servicios confiables, profesionales y orientados a generar tranquilidad y confianza en cada cliente.";
 const ogImage = "/logos/og-image.png";
-const ogImageAlt = "Innovati - Soluciones Informáticas brand logo";
-const finalOgUrl = "https://innovati.vercel.app";
+const ogImageAlt = "InnovaTI - Soluciones Informáticas brand logo";
+const finalOgUrl = "https://innovatisoluciones.com/";
 ---
 
 <!doctype html>
@@ -40,9 +43,11 @@ const finalOgUrl = "https://innovati.vercel.app";
     <meta name="twitter:image:alt" content={ogImageAlt} />
   </head>
   <body>
+	<Navbar />
     <main>
       <slot />
     </main>
+	<Footer />
   </body>
 </html>
 
