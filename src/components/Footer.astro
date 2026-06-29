@@ -1,0 +1,118 @@
+---
+import WhatsappIcon from "@/assets/social/whatsapp.svg";
+
+import { SITE } from "../data/site";
+
+const serviceLinks = [
+  "Outsourcing TI",
+  "Infraestructura y Redes",
+  "Seguridad Informática",
+  "Automatización e IA",
+  "Cloud y Hosting",
+  "Renting Tecnológico",
+];
+---
+
+<footer class="bg-(--bg-section) border-t border-(--border)">
+  <div class="container-xl py-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- Brand col -->
+      <div class="lg:col-span-2">
+        <!-- Logo -->
+        <div class="mb-4">
+          <img
+            src="/logos/icon.webp"
+            alt="InnovaTI"
+            class="h-10 w-auto max-w-40 object-contain"
+            width="40"
+            height="40"
+          />
+        </div>
+
+        <p
+          class="text-(--text-body) text-sm leading-relaxed mb-6 max-w-sm"
+        >
+          Gestionamos tu tecnología para que te concentres en hacer crecer tu
+          negocio. Un solo proveedor. Una sola responsabilidad.
+        </p>
+
+        <!-- Social / WhatsApp CTA -->
+        <a
+          href="https://wa.me/51954644519"
+          target="_blank"
+          rel="noopener"
+          class="btn-primary text-sm inline-flex"
+        >
+          <WhatsappIcon class="size-4" />
+          Escríbenos ahora
+        </a>
+      </div>
+
+      <!-- Services col -->
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Servicios</h4>
+        <ul class="space-y-2.5">
+          {
+            serviceLinks.map((s) => (
+              <li>
+                <a
+                  href="#servicios"
+                  class="text-(--text-body) text-sm hover:text-(--primary) transition-colors"
+                >
+                  {s}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Contact col -->
+      <div>
+        <h4 class="text-white font-bold text-sm mb-4">Contacto</h4>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href={`mailto:${SITE.email}`}
+              class="text-(--text-body) text-sm hover:text-(--primary) transition-colors break-all"
+            >
+              {SITE.email}
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/51954644519"
+              class="text-(--text-body) text-sm hover:text-(--primary) transition-colors"
+            >
+              {SITE.phone}
+            </a>
+          </li>
+          <li>
+            <span class="text-(--text-body) text-sm">{SITE.location}</span>
+          </li>
+          <li>
+            <a
+              href={`https://${SITE.website}`}
+              target="_blank"
+              rel="noopener"
+              class="text-(--text-body) text-sm hover:text-(--primary) transition-colors"
+            >
+              {SITE.website}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="glow-line mb-6"></div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center md:text-left">
+      <p class="text-(--text-body) text-xs">
+        © {new Date().getFullYear()} InnovaTI Soluciones Informáticas. Lima, Perú.
+      </p>
+      <p class="text-(--text-body) text-xs">
+        Un solo proveedor. Una sola responsabilidad.
+      </p>
+    </div>
+  </div>
+</footer>

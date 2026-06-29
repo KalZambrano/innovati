@@ -1,0 +1,193 @@
+---
+import WhatsappIcon from "@/assets/social/whatsapp.svg";
+
+const navLinks = [
+  { href: "#nosotros", label: "Nosotros" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#compromiso", label: "Compromiso" },
+  { href: "#contacto", label: "Contacto" },
+];
+---
+
+<nav
+  class="animate-fade-in-down delay-200 fixed top-0 left-0 right-0 z-60 border-b border-white/10 bg-black/40 backdrop-blur-xl"
+>
+  <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 py-3">
+    <!-- Logo -->
+    <a href="/" class="flex items-center">
+      <img
+        src="/logos/logo-positivo.webp"
+        alt="InnovaTI Logo"
+        class="h-8 w-auto lg:h-10"
+        fetchpriority="high"
+        width="300"
+        height="80"
+      />
+    </a>
+
+    <!-- Desktop -->
+    <ul class="hidden items-center gap-10 lg:flex">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-sm font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:text-(--primary)"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+
+      <li>
+        <a
+          href="https://wa.me/51954644519"
+          target="_blank"
+          aria-label="Contactar por WhatsApp"
+          rel="noopener noreferrer"
+          class="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 transition-all hover:border-(--primary) hover:text-(--primary)"
+        >
+          <WhatsappIcon class="h-5 w-5 fill-current" />
+        </a>
+      </li>
+    </ul>
+
+    <!-- Botón -->
+    <button
+      id="menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-label="Abrir menú"
+      class="relative flex h-10 w-10 flex-col items-center justify-center lg:hidden z-100"
+    >
+      <span
+        class="menu-line absolute h-0.5 w-6 -translate-y-2 bg-white transition-all duration-300"
+      ></span>
+
+      <span
+        class="menu-line absolute h-0.5 w-6 bg-white transition-all duration-300"
+      ></span>
+
+      <span
+        class="menu-line absolute h-0.5 w-6 translate-y-2 bg-white transition-all duration-300"
+      ></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Overlay -->
+
+<div
+  id="menu-overlay"
+  class="fixed inset-0 z-40 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+>
+</div>
+
+<!-- Drawer -->
+
+<aside
+  id="mobile-menu"
+  class="fixed top-0 right-0 z-50 flex h-screen w-[85%] max-w-sm translate-x-full flex-col bg-zinc-950/95 px-8 pt-28 pb-8 backdrop-blur-xl transition-transform duration-300 lg:hidden"
+>
+  <ul class="flex flex-col gap-8">
+    {
+      navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="block text-lg font-semibold uppercase tracking-widest text-white transition hover:text-(--primary)"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="mt-auto border-t border-white/10 pt-8">
+    <a
+      href="https://wa.me/51954644519"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contactar por WhatsApp"
+      class="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 transition hover:border-(--primary) hover:text-(--primary)"
+    >
+      <WhatsappIcon class="size-5" />
+    </a>
+  </div>
+</aside>
+
+<script is:inline>
+  const button = document.getElementById("menu-button");
+  const menu = document.getElementById("mobile-menu");
+  const overlay = document.getElementById("menu-overlay");
+
+  function openMenu() {
+    menu.classList.remove("translate-x-full");
+    overlay.classList.remove("opacity-0", "pointer-events-none");
+
+    document.body.classList.add("overflow-hidden");
+    // document.documentElement.classList.add("overflow-hidden");
+
+    button.setAttribute("aria-expanded", "true");
+    button.setAttribute("aria-label", "Cerrar menú");
+
+    const lines = button.querySelectorAll(".menu-line");
+
+    lines[0].classList.add("translate-y-0", "rotate-45");
+    lines[0].classList.remove("-translate-y-2");
+
+    lines[1].classList.add("opacity-0");
+
+    lines[2].classList.add("-rotate-45");
+    lines[2].classList.remove("translate-y-2");
+  }
+
+  function closeMenu() {
+    menu.classList.add("translate-x-full");
+    overlay.classList.add("opacity-0", "pointer-events-none");
+
+    document.body.classList.remove("overflow-hidden");
+    // document.documentElement.classList.remove("overflow-hidden");
+
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-label", "Abrir menú");
+
+    const lines = button.querySelectorAll(".menu-line");
+
+    lines[0].classList.remove("translate-y-0", "rotate-45");
+    lines[0].classList.add("-translate-y-2");
+
+    lines[1].classList.remove("opacity-0");
+
+    lines[2].classList.remove("-rotate-45");
+    lines[2].classList.add("translate-y-2");
+  }
+
+  function toggleMenu() {
+    const open = button.getAttribute("aria-expanded") === "true";
+
+    open ? closeMenu() : openMenu();
+  }
+
+  button.addEventListener("click", toggleMenu);
+
+  overlay.addEventListener("click", closeMenu);
+
+  menu.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+      closeMenu();
+    }
+  });
+</script>

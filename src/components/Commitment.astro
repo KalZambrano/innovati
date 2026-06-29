@@ -1,0 +1,172 @@
+---
+import { COMMITMENTS } from "../data/site";
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Diagnóstico",
+    description:
+      "Analizamos tu infraestructura actual y necesidades tecnológicas.",
+  },
+  {
+    step: "02",
+    title: "Propuesta",
+    description:
+      "Diseñamos una solución alineada a tus objetivos y presupuesto.",
+  },
+  {
+    step: "03",
+    title: "Implementación",
+    description:
+      "Ejecutamos el plan con criterio técnico y sin interrumpir tu operación.",
+  },
+  {
+    step: "04",
+    title: "Seguimiento",
+    description: "Monitoreamos, reportamos y optimizamos continuamente.",
+  },
+];
+---
+
+<section
+  id="compromiso"
+  class="py-24 lg:py-32 bg-(--bg-section) relative overflow-hidden"
+>
+  <div
+    class="orb w-125 h-125 bg-(--primary) -bottom-37.5 left-1/2 -translate-x-1/2"
+  >
+  </div>
+
+  <div class="container-xl relative z-10">
+    <!-- Commitment cards -->
+    <div
+      class="text-center max-w-2xl mx-auto mb-16 animate-on-enter"
+      data-animate="fade-up"
+    >
+      <span class="section-eyebrow justify-center">
+        <span class="w-6 h-px bg-(--primary)"></span>
+        Nuestro Compromiso
+        <span class="w-6 h-px bg-(--primary)"></span>
+      </span>
+      <h2 class="section-title mb-4">
+        Por qué elegir <span class="text-(--primary)">InnovaTI</span>
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+      {
+        COMMITMENTS.map((item, i) => (
+          <div
+            class="
+    card-glass
+    relative
+    overflow-hidden
+    rounded-3xl
+    border border-(--border)
+    p-7
+    text-left
+    transition-all
+    duration-500
+    hover:-translate-y-1
+    hover:border-[rgba(3,221,180,.35)]
+    hover:shadow-[0_20px_60px_rgba(0,0,0,.25)]
+    group
+    animate-on-enter
+  "
+          >
+            <div class="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[rgba(3,221,180,.45)] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+            <div class="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[rgba(3,221,180,.04)] blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+            <item.icon class="size-8 mb-5 group-hover:text-(--primary) transition-colors" />
+
+            <h3 class="mb-3 text-lg font-semibold tracking-tight text-white">
+              {item.title}
+            </h3>
+
+            <p class="text-sm leading-7 text-(--text-body)">
+              {item.description}
+            </p>
+
+            <div class="absolute bottom-0 left-0 h-0.5 w-0 bg-(--primary) transition-all duration-500 group-hover:w-full" />
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Process section -->
+    <div class="glow-line mb-16"></div>
+
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <span class="section-eyebrow justify-center">
+        <span class="w-6 h-px bg-(--primary)"></span>
+        Cómo trabajamos
+        <span class="w-6 h-px bg-(--primary)"></span>
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">
+        Proceso claro, resultados medibles
+      </h2>
+    </div>
+
+    <!-- Process steps -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+      <!-- Connector line (desktop) -->
+      <div
+        class="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px animate-fade-in animate-delay-700
+        bg-linear-to-r from-(--primary) via-[rgba(3,221,180,0.3)] to-(--primary)"
+      >
+      </div>
+
+      {
+        processSteps.map((step, i) => (
+          <div
+            class="scroll-reveal opacity-0 relative text-center"
+            style={`animation-delay: ${i * 70}ms`}
+            data-delay={i * 70}
+          >
+            <div class="relative z-10 w-16 h-16 rounded-full bg-(--bg-dark) border-2 border-(--primary) flex items-center justify-center mx-auto mb-5 shadow-[0_0_20px_rgba(3,221,180,0.25)]">
+              <span class="text-(--primary) font-black text-sm">
+                {step.step}
+              </span>
+            </div>
+            <h3 class="text-white font-bold text-base mb-2">{step.title}</h3>
+            <p class="text-(--text-body) text-sm leading-relaxed max-w-50 mx-auto">
+              {step.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const delay = el.dataset.delay ?? "0";
+
+          setTimeout(() => {
+            el.classList.remove("opacity-0");
+            el.classList.add("animate-fade-in");
+          }, Number(delay));
+
+          observer.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  document
+    .querySelectorAll<HTMLElement>(".scroll-reveal")
+    .forEach((el) => observer.observe(el));
+</script>
+
+<style>
+  .scroll-reveal {
+    transition: opacity 0s;
+  }
+</style>

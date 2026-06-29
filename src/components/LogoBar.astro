@@ -1,0 +1,54 @@
+---
+const partners = [
+  { name: "Microsoft", logo: "/images/logo-microsoft.svg" },
+  { name: "Google Workspace", logo: "/images/logo-google.svg" },
+  { name: "Fortinet", logo: "/images/logo-fortinet.svg" },
+  { name: "HP", logo: "/images/logo-hp.svg" },
+  { name: "Cisco", logo: "/images/logo-cisco.svg" },
+  { name: "Dell", logo: "/images/logo-dell.svg" },
+];
+---
+
+<section class="py-12 border-y border-(--border) bg-(--bg-section)">
+  <div class="container-xl">
+    <p
+      class="text-center text-xs font-semibold tracking-[0.2em] uppercase text-(--text-body) mb-8"
+    >
+      Trabajamos con las mejores marcas tecnológicas
+    </p>
+
+    <!-- Scrolling logo strip -->
+    <div class="relative overflow-hidden">
+      <div class="flex gap-12 animate-scroll-x w-max">
+        {
+          [...partners, ...partners].map((partner) => (
+            <div class="shrink-0 flex items-center justify-center h-15 w-40 opacity-40 hover:opacity-80 transition-opacity duration-300 grayscale hover:grayscale-0">
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                class="h-full w-full object-contain"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll-x {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-scroll-x {
+    animation: scroll-x 28s linear infinite;
+  }
+  .animate-scroll-x:hover {
+    animation-play-state: paused;
+  }
+</style>
