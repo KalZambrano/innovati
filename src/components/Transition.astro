@@ -1,0 +1,74 @@
+---
+import ArrowRight from "@/assets/icons/arrowright.svg";
+---
+
+<article class="py-20 border-t border-(--border) relative overflow-hidden">
+  <!-- Orb de fondo centrado -->
+  <div
+    class="orb w-100 h-100 bg-(--primary) top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30"
+  >
+  </div>
+
+  <div class="container-xl relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Texto izquierda -->
+      <div class="animate-on-enter" data-animate="fade-right">
+        <span class="section-eyebrow mb-6">
+          <span class="w-6 h-px bg-(--primary)"></span>
+          Nuestra propuesta
+        </span>
+
+        <p
+          class="text-2xl sm:text-3xl font-semibold text-white leading-snug mb-6"
+        >
+          La tecnología debe impulsar tu negocio,
+          <span class="text-(--primary)">
+            no convertirse en una preocupación.</span
+          >
+        </p>
+
+        <p class="text-(--muted) text-base leading-relaxed mb-8">
+          En <strong class="text-white">InnovaTI</strong> centralizamos la gestión
+          tecnológica para que cuentes con un único aliado capaz de administrar tu
+          infraestructura, brindar soporte a tus usuarios y acompañar el crecimiento
+          de tu empresa.
+        </p>
+
+        <a href="#contacto" class="btn-primary">
+          Solicitar evaluación tecnológica
+          <ArrowRight class="size-4" />
+        </a>
+      </div>
+
+      <!-- Imagen derecha -->
+      <div
+        class="relative rounded-3xl overflow-hidden aspect-4/3 max-w-lg mx-auto lg:mx-0 shadow-2xl animate-on-enter"
+        data-animate="fade-left"
+      >
+        <img
+          src="/images/team-meeting.webp"
+          alt="Gerente y especialista TI revisando reportes"
+          class="w-full h-full object-cover"
+        />
+
+        <!-- Overlay sutil con gradiente -->
+        <div
+          class="absolute inset-0 bg-linear-to-tr from-[rgba(5,14,26,0.5)] to-transparent"
+        >
+        </div>
+
+        <!-- Badge flotante sobre la imagen -->
+        <div class="absolute bottom-5 left-5 right-5 card-glass rounded-xl p-4">
+          <p
+            class="text-xs text-(--primary) font-semibold uppercase tracking-wider mb-1"
+          >
+            Un solo aliado estratégico
+          </p>
+          <p class="text-sm text-white font-medium leading-snug">
+            Infraestructura · Soporte · Seguridad · Automatización
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
