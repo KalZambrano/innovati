@@ -1,7 +1,9 @@
 import ChartUp from '@/assets/icons/chart-up.svg'
-import Clock from "@/assets/icons/clock.svg";
-import Puzzle from "@/assets/icons/puzzle.svg";
-import UserShield from "@/assets/icons/user-shield.svg";
+import PhoneCall from '@/assets/icons/phone-call.svg'
+import Target from '@/assets/icons/target-line.svg'
+import ShieldCheck from '@/assets/icons/check-shield.svg'
+import Headphones from '@/assets/icons/headphones.svg'
+import LayoutGrid from '@/assets/icons/layout-grid.svg'
 
 import AIService from "@/assets/icons/artificial-intelligence.svg";
 import CloudService from "@/assets/icons/cloud-services.svg";
@@ -11,6 +13,10 @@ import ShieldLock from "@/assets/icons/shield-lock.svg";
 import LaptopIcon from "@/assets/icons/laptop.svg";
 import Automation from "@/assets/icons/automation.svg";
 import Layers from '@/assets/icons/layers.svg'
+
+import Building from "@/assets/icons/building.svg";
+import MonitorCheck from "@/assets/icons/monitor-check.svg";
+import Puzzle from "@/assets/icons/puzzle.svg";
 
 export const SITE = {
   name: "InnovaTI",
@@ -37,112 +43,110 @@ export const SERVICES: Service[] = [
     id: "outsourcing",
     title: "Outsourcing TI",
     description:
-      "Nos encargamos de la gestión tecnológica de tu empresa para mantener una operación estable, segura y sin interrupciones.",
+      "Convertimos la gestión tecnológica en un servicio administrado. Nos encargamos del soporte a usuarios, mantenimiento preventivo, inventario de activos, administración de cuentas, infraestructura y mesa de ayuda para que tu empresa pueda operar con tranquilidad.",
     icon: CustomerService,
     features: [
-      "Soporte técnico remoto y presencial",
-      "Gestión de usuarios y accesos",
-      "Administración de plataformas empresariales",
-      "Monitoreo y mantenimiento preventivo",
-      "Documentación y control de activos",
-      "Atención y seguimiento de incidencias",
+      "Soporte remoto y presencial",
+      "Mesa de ayuda",
+      "Administración de usuarios",
+      "Gestión de infraestructura",
+      "Mantenimiento preventivo",
+      "Inventario tecnológico",
     ],
-    image: "/images/service-outsourcing.jpg",
   },
   {
     id: "infraestructura",
-    title: "Infraestructura y Redes",
+    title: "Infraestructura Tecnológica",
     description:
-      "Diseñamos, implementamos y administramos infraestructura tecnológica para garantizar la disponibilidad de los sistemas.",
+      "Diseñamos, implementamos y administramos plataformas que permiten mantener una operación estable, segura y preparada para crecer.",
     icon: Layers,
     features: [
-      "Redes empresariales (Switching, WiFi, VPN)",
-      "Servidores físicos y virtuales",
-      "Directorio corporativo",
-      "Cableado estructurado y fibra óptica",
-      "Respaldo y recuperación de información",
-      "UPS y continuidad operativa",
+      "Redes empresariales",
+      "WiFi corporativo",
+      "Cableado estructurado",
+      "Servidores",
+      "Virtualización",
+      "Active Directory",
+      "VPN",
+      "Storage",
+      "Respaldos",
+      "Continuidad operativa"
     ],
-    image: "/images/service-infra.jpg",
   },
   {
     id: "seguridad",
     title: "Seguridad Informática",
     description:
-      "Implementamos controles y soluciones de seguridad para reducir riesgos y proteger la información empresarial.",
+      "Protegemos la información y los accesos de tu empresa mediante buenas prácticas y herramientas orientadas a reducir riesgos y fortalecer la continuidad del negocio.",
     icon: ShieldLock,
     features: [
-      "Protección de equipos, usuarios e información",
-      "Seguridad de correo electrónico",
+      "Antivirus empresarial",
+      "Protección de correo",
+      "Microsoft 365 Security",
       "Autenticación multifactor (MFA)",
-      "Monitoreo de eventos de seguridad",
-      "Protección de plataformas cloud",
-      "Respaldo y recuperación de información",
+      "Control de accesos",
+      "Respaldos",
+      "Monitoreo",
+      "Recomendaciones de seguridad",
     ],
-    image: "/images/service-security.jpg",
   },
   {
     id: "automatizacion",
-    title: "Automatización e IA",
+    title: "Automatización e Inteligencia Artificial",
     description:
-      "Ayudamos a las empresas a optimizar procesos mediante automatización e inteligencia artificial.",
+      "Reducimos tareas repetitivas y optimizamos procesos mediante flujos automatizados e integraciones que permiten ahorrar tiempo y mejorar la productividad.",
     icon: Automation,
     features: [
-      "Flujos de aprobación y validación",
-      "Procesos administrativos automatizados",
-      "Chatbots para atención y soporte",
-      "Integración entre plataformas",
-      "Generación automática de reportes",
-      "Alertas y notificaciones inteligentes",
+      "Power Automate",
+      "n8n",
+      "Integraciones entre sistemas",
+      "Automatización documental",
+      "Chatbots",
+      "Notificaciones automáticas",
+      "Optimización de procesos empresariales",
     ],
-    image: "/images/service-automation.jpg",
   },
   {
     id: "cloud",
-    title: "Servicios Cloud y Hosting",
+    title: "Soluciones Cloud",
     description:
-      "Soluciones en la nube para acceder a la información de forma segura y mantener la continuidad operativa.",
+      "Facilitamos la adopción y administración de servicios en la nube para mejorar la colaboración, la disponibilidad y la seguridad de la información.",
     icon: CloudService,
     features: [
-      "Correo corporativo",
-      "Plataformas de colaboración",
-      "Hosting corporativo",
-      "Certificados SSL",
-      "Respaldo en la nube",
-      "Monitoreo y soporte",
+      "Microsoft 365",
+      "Azure",
+      "Google Workspace",
+      "Correo empresarial",
+      "Migraciones",
+      "Hosting",
+      "Respaldos Cloud",
     ],
-    image: "/images/service-cloud.jpg",
   },
   {
     id: "equipos",
-    title: "Equipos y Software",
+    title: "Ventas de Equipos y Software",
     description:
-      "Ayudamos a equipar a tus colaboradores con hardware y software confiable y alineado a sus necesidades.",
+      "Asesoramos a tu empresa en la adquisición de tecnología alineada a sus necesidades operativas, evitando inversiones innecesarias y facilitando el crecimiento de la infraestructura.",
     icon: HardwareChip,
     features: [
-      "Laptops y computadoras empresariales",
-      "Monitores e impresoras",
-      "Licencias de software empresarial",
-      "Soluciones de seguridad",
-      "Equipamiento para trabajo remoto",
-      "Asesoría en selección tecnológica",
+      "Laptops y PCs",
+      "Servidores",
+      "Monitores",
+      "Impresoras",
+      "Licencias",
+      "Software empresarial",
+      "Periféricos",
     ],
-    image: "/images/service-hardware.jpg",
   },
   {
     id: "renting",
     title: "Renting Tecnológico",
     description:
-      "Equipos bajo modalidad de alquiler para acceder a tecnología moderna sin comprometer capital.",
+      "Renueva la tecnología de tu empresa mediante cuotas mensuales que incluyen soporte y acompañamiento, permitiéndote mantener equipos actualizados sin realizar una inversión inicial elevada.",
     icon: LaptopIcon,
     features: [
-      "Laptops y computadoras empresariales",
-      "Equipos para proyectos temporales",
-      "Equipamiento para nuevos colaboradores",
-      "Renovación tecnológica programada",
-      "Soporte y acompañamiento técnico",
+      ""
     ],
-    image: "/images/service-renting.jpg",
   },
   {
     id: "chatbots",
@@ -166,28 +170,114 @@ export interface Commitment {
   icon: any;
 }
 
-export const COMMITMENTS: Commitment[] = [
+export const BEFORE_INNOVA = [
+  "Diferentes proveedores para cada servicio.",
+  "Respuestas lentas ante incidentes.",
+  "Infraestructura sin documentación.",
+  "Equipos sin mantenimiento preventivo.",
+  "Procesos manuales.",
+  "Crecimiento tecnológico desordenado.",
+  "Falta de seguimiento y control.",
+];
+
+export const AFTER_INNOVA = [
+  "Un solo proveedor para toda la tecnología.",
+  "Atención coordinada y soporte continuo.",
+  "Infraestructura organizada y documentada.",
+  "Equipos administrados de forma preventiva.",
+  "Procesos automatizados.",
+  "Tecnología alineada al crecimiento del negocio.",
+  "Acompañamiento permanente.",
+];
+
+export const BENEFITS = [
   {
-    title: "Mejora Continua",
-    description: "Buscamos optimizar procesos y reducir riesgos tecnológicos.",
+    icon: PhoneCall,
+    title: "Un solo punto de contacto",
+    description:
+      "Olvídate de coordinar con varios proveedores. Centralizamos la gestión tecnológica para simplificar la comunicación y acelerar la solución de incidentes.",
+  },
+  {
+    icon: Target,
+    title: "Tecnología alineada con tu negocio",
+    description:
+      "Cada decisión tecnológica se toma considerando las necesidades y objetivos de tu empresa.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Continuidad operativa",
+    description:
+      "Trabajamos para reducir interrupciones y mantener disponibles los recursos tecnológicos que tu organización necesita para operar.",
+  },
+  {
+    icon: Headphones,
+    title: "Soporte cercano",
+    description:
+      "Acompañamos a tu empresa con atención remota y presencial, brindando seguimiento continuo a cada requerimiento.",
+  },
+  {
     icon: ChartUp,
+    title: "Escalabilidad",
+    description:
+      "Diseñamos soluciones que pueden crecer junto con tu empresa, evitando cambios innecesarios en el futuro.",
   },
   {
-    title: "Soluciones Prácticas",
-    description: "Tecnología alineada a las necesidades del negocio.",
+    icon: LayoutGrid,
+    title: "Optimización de recursos",
+    description:
+      "Una gestión adecuada permite aprovechar mejor la infraestructura existente y planificar nuevas inversiones de manera más eficiente.",
+  },
+];
+
+export const HERO_BENEFITS = [
+  {
+    icon: Building,
+    label: "Un solo proveedor para toda tu tecnología",
+  },
+  {
+    icon: MonitorCheck,
+    label: "Soporte remoto y presencial",
+  },
+  {
     icon: Puzzle,
+    label: "Soluciones adaptadas al crecimiento de tu empresa",
   },
   {
-    title: "Atención Oportuna",
+    icon: ShieldCheck,
+    label: "Acompañamiento continuo para mantener tu operación disponible",
+  },
+];
+
+export const CHALLENGES = [
+  {
+    title: "Soporte lento o inexistente",
     description:
-      "Resolvemos incidencias y acompañamos la operación diaria.",
-    icon: Clock,
+      "Cuando ocurre una falla, encontrar quién pueda resolverla rápidamente se convierte en un problema que afecta la productividad de todo el equipo.",
   },
   {
-    title: "Responsabilidad Operativa",
+    title: "Múltiples proveedores sin coordinación",
     description:
-      "Asumimos la gestión tecnológica con criterio y seguimiento continuo.",
-    icon: UserShield,
+      "Cada proveedor administra una parte de la infraestructura y, cuando surge un incidente, nadie asume la responsabilidad completa.",
+  },
+  {
+    title: "Crecimiento tecnológico sin planificación",
+    description:
+      "Con el tiempo se incorporan nuevos equipos, usuarios y sistemas sin una estrategia clara, generando desorden y mayores costos de administración.",
+  },
+  {
+    title: "Riesgos de seguridad",
+    description:
+      "Contraseñas débiles, accesos sin control, equipos desactualizados o respaldos inexistentes pueden comprometer la continuidad del negocio.",
+  },
+  {
+    title: "Procesos manuales",
+    description:
+      "Muchas tareas repetitivas consumen tiempo que podría dedicarse a actividades de mayor valor para la empresa.",
+  },
+  {
+    title: "Falta de un área especializada de TI",
+    description:
+      "No todas las empresas necesitan un departamento interno de tecnología, pero sí requieren contar con un equipo que responda cuando más lo necesitan.",
   },
 ];
 
