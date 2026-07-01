@@ -35,7 +35,6 @@ export interface Service {
   description: string;
   icon: any;
   features: string[];
-  image?: string;
 }
 
 export const SERVICES: Service[] = [
@@ -66,9 +65,9 @@ export const SERVICES: Service[] = [
       "Cableado estructurado",
       "Servidores",
       "Virtualización",
-      "Active Directory",
-      "VPN",
-      "Storage",
+      "Active Directory - Centralización de usuarios",
+      "VPN - Acceso remoto seguro",
+      "Storage - Almacenamiento centralizado",
       "Respaldos",
       "Continuidad operativa"
     ],
@@ -98,7 +97,7 @@ export const SERVICES: Service[] = [
     icon: Automation,
     features: [
       "Power Automate",
-      "n8n",
+      "n8n - Plataforma de automatización",
       "Integraciones entre sistemas",
       "Automatización documental",
       "Chatbots",
@@ -142,25 +141,13 @@ export const SERVICES: Service[] = [
     id: "renting",
     title: "Renting Tecnológico",
     description:
-      "Renueva la tecnología de tu empresa mediante cuotas mensuales que incluyen soporte y acompañamiento, permitiéndote mantener equipos actualizados sin realizar una inversión inicial elevada.",
+      "Renueva la tecnología de tu empresa, permitiéndote mantener equipos siempre actualizados sin comprometer tu capital.",
     icon: LaptopIcon,
     features: [
-      ""
+      "Sin inversión inicial",
+      "Soporte y acompañamiento incluidos",
+      "Cuotas mensuales",
     ],
-  },
-  {
-    id: "chatbots",
-    title: "Chatbots e Inteligencia Artificial",
-    description:
-      "Automatizamos la atención y gestión de consultas mediante asistentes virtuales.",
-    icon: AIService,
-    features: [
-      "Chatbots para atención al cliente",
-      "Automatización de respuestas frecuentes",
-      "Integración con WhatsApp",
-      "Asistentes virtuales para procesos internos",
-    ],
-    image: "/images/service-chatbots.jpg",
   },
 ];
 
