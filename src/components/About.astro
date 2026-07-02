@@ -3,107 +3,92 @@ import ArrowRight from "@/assets/icons/arrowright.svg";
 import Check from "@/assets/icons/check-rounded.svg";
 ---
 
-<section
-  id="nosotros"
-  class="py-24 lg:py-32 bg-(--bg-section) relative overflow-hidden"
->
-  <div
-    class="orb w-125 h-125 bg-(--primary) top-1/2 -left-50 -translate-y-1/2"
-  >
-  </div>
+<section id="nosotros" class="bg-(--bg-section) relative overflow-hidden">
+  <div class="py-24 lg:py-32 relative">
+    <div
+      class="orb w-125 h-125 bg-(--primary) top-1/2 -left-50 -translate-y-1/2"
+    >
+    </div>
 
-  <div class="container-xl relative z-10">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <!-- Visual left -->
-      <div class="relative">
-        <div
-          class="relative rounded-3xl overflow-hidden aspect-12/10 max-w-md mx-auto lg:mx-0"
-        >
-          <img
-            src="/images/team.webp"
-            alt="Equipo InnovaTI"
-            class="w-full h-full object-cover"
-          />
-        </div>
-
-        <!-- Floating card -->
-        <div
-          class="absolute -right-4 top-12 card-glass rounded-xl p-4 max-w-45 shadow-xl"
-        >
-          <div class="flex items-center gap-2 mb-2">
-            <div class="w-2 h-2 rounded-full bg-(--primary) animate-pulse">
-            </div>
-            <span class="text-xs text-(--primary) font-semibold"
-              >Activo</span
-            >
+    <div class="container-xl relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Visual izquierda -->
+        <div class="relative">
+          <div
+            class="relative rounded-3xl overflow-hidden aspect-12/10 max-w-md mx-auto lg:mx-0"
+          >
+            <img
+              src="/images/team.webp"
+              alt="Equipo InnovaTI"
+              class="w-full h-full object-cover"
+            />
           </div>
-          <p class="text-xs text-white font-medium leading-snug">
-            Soporte técnico disponible
-          </p>
+
+          <!-- Floating card -->
+          <div
+            class="absolute -right-4 top-12 card-glass rounded-xl p-4 max-w-45 shadow-xl"
+          >
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-2 h-2 rounded-full bg-(--primary) animate-pulse">
+              </div>
+              <span class="text-xs text-(--primary) font-semibold">Activo</span>
+            </div>
+            <p class="text-xs text-white font-medium leading-snug">
+              Soporte técnico disponible
+            </p>
+          </div>
         </div>
 
-        <!-- Second floating card -->
-        <!-- <div
-          class="absolute -left-4 bottom-16 card-glass rounded-xl p-4 max-w-50 shadow-xl"
-        >
-          <div class="text-2xl font-bold text-(--primary)">8+ años</div>
-          <p class="text-xs text-(--muted) mt-1">
-            gestionando tecnología empresarial en Perú
+        <!-- Texto derecha -->
+        <div>
+          <span class="section-eyebrow">
+            <span class="w-6 h-px bg-(--primary)"></span>
+            Sobre Nosotros
+          </span>
+
+          <h2 class="section-title mb-6">
+            Tu aliado estratégico en
+            <span class="text-(--primary)"> gestión tecnológica</span>
+          </h2>
+
+          <p class="text-(--muted) text-base leading-relaxed mb-6">
+            En <strong class="text-white">InnovaTI</strong> ayudamos a las empresas
+            a gestionar su tecnología de forma eficiente, segura y alineada a sus
+            objetivos de negocio.
           </p>
-        </div> -->
-      </div>
 
-      <!-- Text right -->
-      <div>
-        <span class="section-eyebrow">
-          <span class="w-6 h-px bg-(--primary)"></span>
-          Sobre Nosotros
-        </span>
+          <p class="text-(--muted) text-base leading-relaxed mb-8">
+            Brindamos servicios de Outsourcing TI, Infraestructura, Seguridad
+            Informática, Automatización y Suministro Tecnológico, adaptándonos a
+            las necesidades reales de cada organización con un enfoque práctico
+            y orientado a resultados.
+          </p>
 
-        <h2 class="section-title mb-6">
-          Tu aliado estratégico en
-          <span class="text-(--primary)"> gestión tecnológica</span>
-        </h2>
+          <ul class="space-y-4 mb-10">
+            {
+              [
+                "Un solo punto de contacto para toda la gestión TI",
+                "Continuidad operativa respaldada por procesos y seguimiento",
+                "Tecnología gestionada por especialistas certificados",
+                "Mayor control sobre infraestructura y activos tecnológicos",
+              ].map((point) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[rgba(3,221,180,0.1)] border border-(--primary) flex items-center justify-center">
+                    <Check class="size-3 text-(--primary)" />
+                  </span>
+                  <span class="text-(--muted) text-sm leading-relaxed">
+                    {point}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
 
-        <p class="text-(--muted) text-base leading-relaxed mb-6">
-          En <strong class="text-white">InnovaTI</strong> ayudamos a las empresas
-          a gestionar su tecnología de forma eficiente, segura y alineada a sus objetivos
-          de negocio.
-        </p>
-
-        <p class="text-(--muted) text-base leading-relaxed mb-8">
-          Brindamos servicios de Outsourcing TI, Infraestructura, Seguridad
-          Informática, Automatización y Suministro Tecnológico, adaptándonos a
-          las necesidades reales de cada organización con un enfoque práctico y
-          orientado a resultados.
-        </p>
-
-        <!-- Key points -->
-        <ul class="space-y-4 mb-10">
-          {
-            [
-              "Un solo punto de contacto para toda la gestión TI",
-              "Continuidad operativa respaldada por procesos y seguimiento",
-              "Tecnología gestionada por especialistas certificados",
-              "Mayor control sobre infraestructura y activos tecnológicos",
-            ].map((point) => (
-              <li class="flex items-start gap-3">
-                <span class="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[rgba(3,221,180,0.1)] border border-(--primary) flex items-center justify-center">
-                  <Check class="size-3 text-(--primary)" />
-                  
-                </span>
-                <span class="text-(--muted) text-sm leading-relaxed">
-                  {point}
-                </span>
-              </li>
-            ))
-          }
-        </ul>
-
-        <a href="#contacto" class="btn-primary">
-          Conoce cómo podemos ayudarte
-          <ArrowRight class="size-4" />
-        </a>
+          <a href="#contacto" class="btn-primary">
+            Conoce cómo podemos ayudarte
+            <ArrowRight class="size-4" />
+          </a>
+        </div>
       </div>
     </div>
   </div>

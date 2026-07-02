@@ -16,31 +16,35 @@ import { SITE } from "../data/site";
   >
   </div>
 
-  <div class="container-xl relative z-10">
+  <div class="max-w-6xl mx-auto px-4 relative z-10">
     <!-- Big CTA card -->
     <div
       class="rounded-3xl border border-(--border) bg-linear-to-br from-(--bg-card) to-(--bg-dark) p-6 sm:p-10 md:p-12 lg:p-16 relative overflow-hidden"
     >
-      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div class="grid xl:grid-cols-2 gap-8 lg:gap-12 items-center">
         <!-- Left text -->
         <div>
           <span class="section-eyebrow">
             <span class="w-6 h-px bg-(--primary)"></span>
-            ¿Listo para dar el siguiente paso?
+            ¿Listo para impulsar tu empresa?
           </span>
           <h2
-            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4"
+            class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4"
           >
-            Tecnología<br />
-            <span class="text-(--primary)">bajo control.</span>
+            Hablemos de la tecnología<br />
+            <span class="text-(--primary)">que hará crecer tu negocio.</span>
           </h2>
-          <p class="text-(--muted) text-base leading-relaxed mb-8 max-w-lg">
-            Conversemos sobre las necesidades de tu empresa y descubre cómo
-            podemos ayudarte a optimizar tu entorno tecnológico.
+
+          <p class="text-(--muted) text-base leading-relaxed mb-8 xl:max-w-lg">
+            Cuéntanos qué necesita tu empresa y uno de nuestros especialistas se
+            pondrá en contacto contigo para analizar tu situación y proponerte
+            la solución más adecuada. <span class="text-(--primary-light) font-medium"
+              >Sin compromiso.</span
+            >
           </p>
 
           <!-- Contact options -->
-          <div class="space-y-4">
+          <div class="space-y-6">
             <a
               href={`https://wa.me/51954644519`}
               target="_blank"
@@ -48,12 +52,13 @@ import { SITE } from "../data/site";
               class="flex items-center gap-4 group w-fit"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-[rgba(3,221,180,0.1)] border border-(--border) flex items-center justify-center group-hover:bg-[rgba(3,221,180,0.2)] group-hover:border-(--primary) transition-all"
+                class="w-14 h-14 rounded-xl bg-[rgba(3,221,180,0.1)] border border-(--border) flex items-center justify-center group-hover:bg-[rgba(3,221,180,0.2)] group-hover:border-(--primary) transition-all shrink-0"
               >
-                <WhatsappIcon class="size-5 text-(--primary)" />
+                <WhatsappIcon class="size-6 text-(--primary)" />
               </div>
               <div>
-                <p class="text-xs text-(--text-body)">WhatsApp directo</p>
+                <p class="text-xs font-semibold text-(--primary) uppercase tracking-wider mb-1">WhatsApp</p>
+                <p class="text-sm text-(--text-body) mb-0.5">Atención Comercial</p>
                 <p
                   class="text-white font-semibold group-hover:text-(--primary) transition-colors"
                 >
@@ -67,12 +72,13 @@ import { SITE } from "../data/site";
               class="flex items-center gap-4 group w-fit"
             >
               <div
-                class="w-12 h-12 rounded-xl bg-[rgba(3,221,180,0.1)] border border-(--border) flex items-center justify-center group-hover:bg-[rgba(3,221,180,0.2)] group-hover:border-(--primary) transition-all"
+                class="w-14 h-14 rounded-xl bg-[rgba(3,221,180,0.1)] border border-(--border) flex items-center justify-center group-hover:bg-[rgba(3,221,180,0.2)] group-hover:border-(--primary) transition-all shrink-0"
               >
-                <MailIcon class="size-5 text-(--primary)" />
+                <MailIcon class="size-6 text-(--primary)" />
               </div>
               <div>
-                <p class="text-xs text-(--text-body)">Correo electrónico</p>
+                <p class="text-xs font-semibold text-(--primary) uppercase tracking-wider mb-1">Correo</p>
+                <p class="text-sm text-(--text-body) mb-0.5">Escríbenos</p>
                 <p
                   class="text-white font-semibold group-hover:text-(--primary) transition-colors"
                 >
@@ -83,13 +89,14 @@ import { SITE } from "../data/site";
 
             <div class="flex items-center gap-4 w-fit">
               <div
-                class="w-12 h-12 rounded-xl bg-[rgba(3,221,180,0.1)] border border-(--border) flex items-center justify-center"
+                class="w-14 h-14 rounded-xl bg-[rgba(3,221,180,0.1)] border border-(--border) flex items-center justify-center shrink-0"
               >
-                <MapPin class="size-5 text-(--primary)" />
+                <MapPin class="size-6 text-(--primary)" />
               </div>
               <div>
-                <p class="text-xs text-(--text-body)">Ubicación</p>
-                <p class="text-white font-semibold">{SITE.location}</p>
+                <p class="text-xs font-semibold text-(--primary) uppercase tracking-wider mb-1">Ubicación</p>
+                <p class="text-sm text-(--text-body) mb-0.5">Atendemos empresas en todo el Perú</p>
+                <p class="text-white font-semibold">Lima - Perú</p>
               </div>
             </div>
           </div>
@@ -97,9 +104,13 @@ import { SITE } from "../data/site";
 
         <!-- Right form -->
         <div class="card-glass rounded-2xl p-5 sm:p-6 md:p-8">
-          <h3 class="text-white font-bold text-base sm:text-lg mb-4 sm:mb-6">
-            Cuéntanos sobre tu empresa
+          <h3 class="text-white font-bold text-base sm:text-lg mb-2">
+            Solicita una evaluación tecnológica
           </h3>
+          <p class="text-(--text-body) text-sm mb-4 sm:mb-6">
+            Completa el formulario y te contactaremos para diseñar una propuesta
+            a la medida de tu empresa.
+          </p>
 
           <form id="contact-form" class="space-y-3 sm:space-y-4" novalidate>
             <div>
@@ -137,14 +148,30 @@ import { SITE } from "../data/site";
               <label
                 for="email"
                 class="block text-xs font-semibold text-(--muted) mb-1 sm:mb-1.5"
-                >Correo electrónico</label
+                >Correo corporativo</label
               >
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                placeholder="juan@empresa.com"
+                placeholder="nombre@empresa.com"
+                class="w-full bg-(--bg-dark) border border-(--border) rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-(--text-body) focus:outline-none focus:border-(--primary) focus:ring-1 focus:ring-(--primary) transition-colors"
+              />
+            </div>
+
+            <div>
+              <label
+                for="phone"
+                class="block text-xs font-semibold text-(--muted) mb-1 sm:mb-1.5"
+                >Teléfono de contacto</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                placeholder="+51 987 654 321"
                 class="w-full bg-(--bg-dark) border border-(--border) rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-(--text-body) focus:outline-none focus:border-(--primary) focus:ring-1 focus:ring-(--primary) transition-colors"
               />
             </div>
@@ -160,16 +187,15 @@ import { SITE } from "../data/site";
                 name="service"
                 class="w-full bg-(--bg-dark) border border-(--border) rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white focus:outline-none focus:border-(--primary) focus:ring-1 focus:ring-(--primary) transition-colors"
               >
-                <option value="">Selecciona un servicio</option>
+                <option value="">Seleccione una opción</option>
                 <option>Outsourcing TI</option>
-                <option>Infraestructura y Redes</option>
+                <option>Infraestructura Tecnológica</option>
                 <option>Seguridad Informática</option>
+                <option>Microsoft 365 y Cloud</option>
                 <option>Automatización e IA</option>
-                <option>Cloud y Hosting</option>
-                <option>Equipos y Software</option>
+                <option>Venta de Equipos</option>
                 <option>Renting Tecnológico</option>
-                <option>Chatbots</option>
-                <option>Varios / No sé aún</option>
+                <option>Otro</option>
               </select>
             </div>
 
@@ -177,13 +203,13 @@ import { SITE } from "../data/site";
               <label
                 for="message"
                 class="block text-xs font-semibold text-(--muted) mb-1 sm:mb-1.5"
-                >Mensaje (opcional)</label
+                >¿Cómo podemos ayudarte?</label
               >
               <textarea
                 id="message"
                 name="message"
                 rows="3"
-                placeholder="Cuéntanos brevemente qué necesitas..."
+                placeholder="Cuéntanos brevemente qué necesita tu empresa o el desafío que deseas resolver."
                 class="w-full bg-(--bg-dark) border border-(--border) rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-(--text-body) focus:outline-none focus:border-(--primary) focus:ring-1 focus:ring-(--primary) transition-colors resize-none"
               ></textarea>
             </div>
@@ -195,6 +221,10 @@ import { SITE } from "../data/site";
               Enviar consulta
               <SendIcon class="size-4 sm:size-5" />
             </button>
+            <span class="text-xs text-(--muted)"
+              >Nos pondremos en contacto contigo a la brevedad para conocer las
+              necesidades de tu empresa.</span
+            >
           </form>
 
           <!-- Success message (hidden by default) -->

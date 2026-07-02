@@ -1,0 +1,111 @@
+---
+const processSteps = [
+  {
+    step: "01",
+    title: "Diagnóstico",
+    description:
+      "Analizamos tu infraestructura actual y necesidades tecnológicas.",
+  },
+  {
+    step: "02",
+    title: "Propuesta",
+    description:
+      "Diseñamos una solución alineada a tus objetivos y presupuesto.",
+  },
+  {
+    step: "03",
+    title: "Implementación",
+    description:
+      "Ejecutamos el plan con criterio técnico y sin interrumpir tu operación.",
+  },
+  {
+    step: "04",
+    title: "Seguimiento",
+    description: "Monitoreamos, reportamos y optimizamos continuamente.",
+  },
+];
+---
+<section class="px-4 lg:px-8">
+  <!-- Process section -->
+  <div class="glow-line mb-16"></div>
+
+  <div class="text-center max-w-xl mx-auto mb-12">
+    <span class="section-eyebrow justify-center">
+      <span class="w-6 h-px bg-(--primary)"></span>
+      Cómo trabajamos
+      <span class="w-6 h-px bg-(--primary)"></span>
+    </span>
+    <h2 class="text-2xl sm:text-3xl font-bold text-white">
+      Proceso claro, resultados medibles
+    </h2>
+  </div>
+
+  <!-- Process steps -->
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+    <!-- Connector line (desktop) -->
+    <div
+      class="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px animate-fade-in animate-delay-700
+        bg-linear-to-r from-(--primary) via-[rgba(3,221,180,0.3)] to-(--primary)"
+    >
+    </div>
+
+    {
+      processSteps.map((step, i) => (
+        <div
+          class="scroll-reveal opacity-0 relative text-center"
+          style={`animation-delay: ${i * 70}ms`}
+          data-delay={i * 70}
+        >
+          <div class="relative z-10 w-16 h-16 rounded-full bg-(--bg-dark) border-2 border-(--primary) flex items-center justify-center mx-auto mb-5 shadow-[0_0_20px_rgba(3,221,180,0.25)]">
+            <span class="text-(--primary) font-black text-sm">{step.step}</span>
+          </div>
+          <h3 class="text-white font-bold text-base mb-2">{step.title}</h3>
+          <p class="text-(--text-body) text-sm leading-relaxed max-w-50 mx-auto">
+            {step.description}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+  <div class="mt-16 max-w-4xl mx-auto text-center scroll-reveal opacity-0">
+    <p class="text-lg sm:text-xl leading-relaxed text-(--text-body)">
+      Nuestro trabajo no termina cuando implementamos una solución.
+      <br class="hidden sm:block" />
+      <span class="text-(--primary) font-semibold">
+        Comienza con el compromiso de acompañar el crecimiento tecnológico de tu
+        organización.
+      </span>
+    </p>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const delay = el.dataset.delay ?? "0";
+
+          setTimeout(() => {
+            el.classList.remove("opacity-0");
+            el.classList.add("animate-fade-in");
+          }, Number(delay));
+
+          observer.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+
+  document
+    .querySelectorAll<HTMLElement>(".scroll-reveal")
+    .forEach((el) => observer.observe(el));
+</script>
+
+<style>
+  .scroll-reveal {
+    transition: opacity 0s;
+  }
+</style>

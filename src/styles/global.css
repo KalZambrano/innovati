@@ -1,9 +1,11 @@
 @import "tailwindcss";
-@import 'tailwind-animations';
+@import "tailwind-animations";
 
 :root {
   --primary: #03ddb4;
   --primary-light: #00ffa9;
+  --primary-lighter: #a3ffe3;
+  --primary-darker: #025F50;
   --white: #ffffff;
   --black: #000000;
   --muted: #d5d9dd;
@@ -32,7 +34,7 @@
 
 @layer components {
   .container-xl {
-    @apply max-w-7xl mx-auto px-6;
+    @apply max-w-7xl mx-auto px-10;
   }
 
   .btn-primary {
@@ -70,6 +72,13 @@
 
   .glow-line {
     @apply h-px bg-linear-to-r from-transparent via-(--primary) to-transparent opacity-30;
+  }
+
+  .btn-outline-dark {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl
+         border-2 border-[#0b1928] text-[#0b1928]
+         transition-all duration-200
+         hover:bg-[#0b1928] hover:text-white;
   }
 }
 
